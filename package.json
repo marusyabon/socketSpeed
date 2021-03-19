@@ -1,0 +1,22 @@
+{
+  "name": "socketsspeed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:io": "nodemon ioApp.js",
+    "start:uws": "nodemon uwsApp.js",
+    "start:io:uws": "nodemon ioUwsApp.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eiows": "^3.4.2",
+    "express": "^4.17.1",
+    "node-static": "^0.7.11",
+    "nodemon": "^2.0.7",
+    "socket.io": "^4.0.0",
+    "uWebSockets.js": "github:uNetworking/uWebSockets.js#v18.14.0"
+  }
+}

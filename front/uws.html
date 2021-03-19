@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Socket speed</title>
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+
+<body>
+	<h2>Test uWebSockets.js speed</h2>
+	<div id="data"></div>
+	<script>
+		const ws = new WebSocket("ws://127.0.0.1:3001");
+		const container = document.getElementById("data");
+
+		ws.onopen = evt => {
+			ws.onmessage = evt => {
+				console.log(evt);
+
+				// let msg = JSON.parse(evt.data);
+				container.style = `background-image: url("data:image/png;base64, ${evt.data}")`;
+
+				console.log(evt);
+				ws.close();
+			}
+		}
+
+	</script>
+
+	<style>
+		h2 {
+			text-align: center;
+		}
+		#data {
+			max-width: 800px;
+			height: 800px;
+			background-size: cover;
+			margin: auto;
+		}
+	</style>
+</body>
+
+</html>
