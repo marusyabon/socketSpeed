@@ -4,12 +4,9 @@ const uws = require('uWebSockets.js');
 
 const PORT = 3001;
 
-uws.App({
-	key_file_name: 'misc/key.pem',
-	cert_file_name: 'misc/cert.pem',
-}).ws('/', {
+uws.App().ws('/', {
 	compression: 0,
-	maxPayloadLength: 16 * 1024 * 1024 * 100000,
+	maxPayloadLength: 16 * 1024 * 1024,
 	idleTimeout: 60,
 
 	open: (ws, req) => {
